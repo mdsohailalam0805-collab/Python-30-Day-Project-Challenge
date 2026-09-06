@@ -1,3 +1,6 @@
+
+# Mini Quiz Game
+
 questions = [
     {
         "question": "What is the capital of India?", 
