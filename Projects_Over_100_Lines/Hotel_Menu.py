@@ -33,9 +33,11 @@ menu = {
 print("Welcome to Python Restaurant\n")
 
 # Print Menu
+
 for category, items in menu.items():
 
     print(f"---------- {category} ----------")
+    
     print()
 
     for item, price in items.items():
@@ -45,9 +47,11 @@ for category, items in menu.items():
 
 
 # Total Amount
+
 Order_Total = 0
 
 # First Order
+
 item_1 = input("Enter the name of item that you want to order: ").lower().strip()
 
 found = False
@@ -61,6 +65,7 @@ for category, items in menu.items():
         print(f"Your item '{item_1}' has been added to your order")
 
         found = True
+        
         break
 
 if not found:
@@ -68,6 +73,7 @@ if not found:
 
 
 # Second Order
+
 another_order = input("Do you want to add another item? (Yes/No): ").lower().strip()
 
 if another_order == "yes":
@@ -92,4 +98,5 @@ if another_order == "yes":
 
 
 # Final Bill
+
 print(f"\nThe total amount of your order is ₹{Order_Total}")
