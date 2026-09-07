@@ -21,14 +21,13 @@ This repository is part of my continuous Python learning and project-building jo
 ## 📂 Repository Structure
 
 Python-Project-Collection/
-│
-├── Projects_Under_100_Lines/
-│   ├── Number_Guessing_Game.py
-│   ├── Expense_Tracker.py
-│   └── ...
-│
-├── Projects_Over_100_Lines/
-│   ├── Hotel_Menu.py
-│   ├── Student result management system.py
-│
-└── README.md
+Projects_Under_100_Lines/
+Number_Guessing_Game.py
+Expense_Tracker.py
+...
+
+Projects_Over_100_Lines/
+Hotel_Menu.py
+Student result management system.py
+
+README.md
