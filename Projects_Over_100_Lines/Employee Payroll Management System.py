@@ -2,9 +2,9 @@ employees = {}
 
 def add_employee():
     
-    employee_name = input("Enter employee name:")
+    employee_name = input("Enter employee name you want to add:")
     salary = float(input("Enter monthly salary:"))
-    working_days = int(input("enter working days:"))
+    working_days = int(input("Enter working days:"))
     
     employees[employee_name] = {
         "salary" : salary,
@@ -18,7 +18,7 @@ def add_employee():
 
 def view_employee():
     
-    if not employee:
+    if not employees:
         print("\n Employee not found.")
         return
     print("---------------------")
@@ -34,7 +34,7 @@ def view_employee():
 
 def calculate_salary():
     
-    employee_name = input("Enter employee name:")
+    employee_name = input("Enter the employee name whose salary want to calculate:")
     
     if employee_name in employees:
         details = employees[employee_name]
@@ -58,7 +58,7 @@ def calculate_salary():
         print("---------------------------")
         
 def update_salary():
-    employee_name = input("Enter Employee name:")
+    employee_name = input("Enter Employee name whose salary want to upadate:")
     
     if employee_name in employees:
         new_salary = float(input("Enter New Monthly Salary:"))
@@ -71,7 +71,7 @@ def update_salary():
         
         
 def delete_employee():
-    employee_name = input("Enter the Employee name you want to delete:")
+    employee_name = input("Enter the Employee name whose you want to delete:")
     
     if employee_name in employees:
         del employees[employee_name]
@@ -80,6 +80,39 @@ def delete_employee():
     else:
         print("Employee not Found!")
         
+                
+while True:
+    print("===== EMPLOYEE PAYROLL MANAGEMENT SYSTEM =====")
+    
+    print("1. Add Employee")
+    print("2. View Employee")
+    print("3. Calacualate Salary")
+    print("4. Update Salary")
+    print("5. Delete employee")
+    print("6. Exit")
+    
+    choice = input("Enter your choice:")
+    
+    if choice == "1":
+        add_employee()
         
-
+    elif choice == "2":
+        view_employee()
+        
+    elif choice == "3":
+        calculate_salary()
+        
+    elif choice == "4":
+        update_salary()
+        
+    elif choice == "5":
+        delete_employee()
+        
+    elif choice == "6":
+        
+        print("Thank You For Using Employee Payroll Management.")
+        break
+    
+    else:
+        print("Invalid Choice, Please Try Again!")
     
