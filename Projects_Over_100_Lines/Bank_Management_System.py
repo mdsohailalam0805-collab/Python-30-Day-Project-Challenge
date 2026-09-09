@@ -2,13 +2,13 @@ account = {}
 
 def create_account():
 
-    account_number = int(input("Enter Account number:"))
+    account_number = input("Enter Account number:")
     account_holder_name = input("Enter the account holder name:")
     initial_balance = float(input("Enter initial balance:"))
     
     account[account_number] = {
-        "Account holder name":account_holder_name,
-        "Initial Balance": initial_balance
+        "account_holder_name":account_holder_name,
+        "initial_balance": initial_balance
     }
     
     print("\nAccount Created Successfully!")
@@ -16,7 +16,7 @@ def create_account():
     
 def view_account():
     
-    account_number = int(input("Enter account number:"))
+    account_number = input("Enter account number:")
     
     if account_number in account:
         details = account[account_number]
@@ -31,7 +31,7 @@ def view_account():
         print("------------------------------")
         
 def deposit_money():
-    account_number = int(input("Enter Account Number:"))
+    account_number = input("Enter Account Number:")
     
     if account_number in account:
         amount = float(input("Enter the deposit ammount:"))
@@ -40,7 +40,7 @@ def deposit_money():
             account[account_number]['initial_balance'] += amount
             
             print("\nMoney deposit successfully!")
-            print(f"updated Balance : {account[amount_number]['initial_balance']}")
+            print(f"updated Balance : {account[account_number]['initial_balance']}")
             
         else:
             print("Deposit Amount must be greater than 0.")
@@ -50,7 +50,7 @@ def deposit_money():
         print("----------------------------------")
         
 def withdraw_money():
-    account_number = int(input("Enter Account number:"))
+    account_number = input("Enter Account number:")
     
     if account_number in account:
         withdraw_amount = float(input("Enter withdraw amount:"))
@@ -71,20 +71,20 @@ def withdraw_money():
         print("----------------------------------------")
         
 def check_balance():
-    account_number = int(input("Enter account number:"))
+    account_number = input("Enter account number:")
     
     if account_number in account:
         print("===== BALANCE DETAILS =====") 
         print(f" Account Number : {account_number}")
         print(f"Account holder name : {account[account_number]['account_holder_name']}")  
-        print(f"Initialy Balance : {account[account_number]['initially_balance']}")
+        print(f"Initialy Balance : {account[account_number]['initial_balance']}")
         print("-----------------------------------------")
     else:
         print("\n Account not found!")
         print("------------------------------------------")
         
 def delete_account():
-    account_number = int(input("Enter account number:"))
+    account_number = input("Enter account number:")
      
     if account_number in account:
         del account[account_number]
@@ -131,4 +131,6 @@ def main_menu():
     
         else:
             print("\n Invalid choice! Please try again.")
+            
+main_menu()
         
