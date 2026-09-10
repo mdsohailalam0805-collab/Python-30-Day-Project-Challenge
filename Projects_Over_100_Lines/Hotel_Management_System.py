@@ -20,16 +20,17 @@ def view_booking():
     
     if not bookings:
         print("\n No Booking Available!")
+        return
         
-        print("\n ===== ALL BOOKINGS =====")
+    print("\n ===== ALL BOOKINGS =====")
         
-        for room_number, details in bookings.items():
+    for room_number, details in bookings.items():
             
-            print(f"Room Number : {room_number}")
-            print(f"Guest Name : {details['guest_name']}")
-            print(f"Days : {details['days']}")
-            print(f"Room Price : {details['room_price']}")
-            print("---------------------------------------")
+        print(f"Room Number : {room_number}")
+        print(f"Guest Name : {details['guest_name']}")
+        print(f"Days : {details['days']}")
+        print(f"Room Price : {details['room_price']}")
+        print("---------------------------------------")
             
 
 def search_booking():
@@ -64,6 +65,8 @@ def calculate_bill():
         print(f" Guest Name : {details['guest_name']}")
         print(f" Days : {details['days']}")
         print(f" Room Price : {details['room_price']}")
+        print(f"Total Bill : ₹{total_bill}")
+        
         
     else:
         print("\n Booking Not Found!")
@@ -77,9 +80,9 @@ def update_booking():
         
         new_guest_name = input("Enter new guest name:")
         new_days = int(input("Enter new days:"))
-        new_price_room = input("Enter new price Room:")
+        new_price_room = float(input("Enter new price Room:"))
         
-        details["guest_name"] = new_price_room
+        details["guest_name"] = new_guest_name
         details["days"] = new_days
         details["room_price"] = new_price_room
         
@@ -92,10 +95,10 @@ def update_booking():
 
 
 def cancel_booking():
-    room_number = intput("Enter Room Number:")
+    room_number = input("Enter Room Number:")
     
     if room_number in bookings:
-        del bbookings[room_number]
+        del bookings[room_number]
         
         print("\n Booking Cancel successfully!")
         print("----------------------------------")
