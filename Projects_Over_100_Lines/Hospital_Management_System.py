@@ -18,20 +18,16 @@ def add_patients():
     print("\n Patient Added Successfully:")
     print("---------------------------------")
 
-add_patients()   
-print(patients)
-
-print("\nview patient")
 def view_patient():
-    patient_id = input("Enter patient Id:")
     
-    if patient_id not in patients:
+    if not patients:
         print("Patient Not Available!")
+        
         return
     
     for patient_id, details in patients.items():
         
-        print("------PATIENT DETAILS------")
+        print("------ALL PATIENT DETAILS------")
         
         print(f"Patient Id: {patient_id}")
         print(f"Patient Name : {details['patient_name']}")
@@ -39,10 +35,8 @@ def view_patient():
         print(f"Disease : {details['disease']}")  
         
         print("---------------------------------") 
-        
-view_patient()
 
-print("\nsearch patient")
+
 def search_patient():
     patient_id = input("Enter patient Id:")
     
@@ -59,13 +53,10 @@ def search_patient():
         
     else:
         print("\n Patient Not Found!")
-        
-search_patient() 
  
         
 doctors = {}
 
-print("\nAdd doctor")
 def add_doctor():
     doctor_id = input("Enter Doctor Id:")
     doctor_name = input("Enter Doctor Name:")
@@ -79,14 +70,10 @@ def add_doctor():
     }
     print("\n Doctor Added Successfully!")
     print("---------------------------------")
-    
-add_doctor()
-print(doctors)
 
 
 appointments = {}
 
-print("\n Book Appointment")
 def book_appointment():
     patient_id = input("Enter Patient Id:")
     
@@ -110,10 +97,6 @@ def book_appointment():
     print("\n Appointment Booked Successfully!")
     print("--------------------------------------")
     
-book_appointment()   
-
-
-print("\n Hospital Bill")
 
 def generate_bill():
     patient_id = input("Enter patient Id:")
@@ -128,16 +111,15 @@ def generate_bill():
     total_bill = consultation_fee + medicine_charges
     
     print("\n------HOSPITAL BILL------")
+    
     print(f"Patient Id : {patient_id}")
     print(f"Patient Name : {patients[patient_id]['patient_name']}")
     print(f"Consultation Fee : {consultation_fee}")
     print(f"Medicine Charges : {medicine_charges}")
+    
     print(f"Total Bill : {total_bill}")
     print("-----------------------------------------")
     
-generate_bill()
-
-print("\n Delete Patient")
 
 def delete_patient():
     patient_id = input("Enter Patient Id to delete:")
@@ -151,4 +133,48 @@ def delete_patient():
     else:
         print("\nPatient Not Found!")    
         
-delete_patient()
+
+def main_menu():
+    
+    while True:
+        
+        print("1. Add patient")
+        print("2. View Patient")
+        print("3. Search patient")
+        print("4. Add Doctor")
+        print("5. Book Appointment")
+        print("6. Generate_Bill")
+        print("7. Delete Patient")
+        print("8. Exit")
+        
+        choice = input("Enter Your Choice:")
+        
+        if choice == "1":
+            add_patients()
+            
+        elif choice == "2":
+            view_patient()
+            
+        elif choice == "3":
+            search_patient()
+            
+        elif choice == "4":
+            add_doctor()
+            
+        elif choice == "5":
+            book_appointment()
+            
+        elif choice == "6":
+            generate_bill()
+            
+        elif choice == "7":
+            delete_patient()
+            
+        elif choice == "8":
+            print("\n Thank You For Using Hospital Management System.")
+            break
+        
+        else:
+            print("Invalid choice , Please Try Again!")
+            
+main_menu()
