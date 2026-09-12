@@ -22,5 +22,25 @@ add_patients()
 print(patients)
 
 
+def view_patient():
+    patient_id = input("Enter patient Id:")
+    
+    if patient_id not in patients:
+        print("Patient Not Found!")
+        return
+    
+    for patient_id, details in patients.items():
+        
+        print("------PATIENT DETAILS------")
+        
+        print(f"Patient Id: {patient_id}")
+        print(f"Patient Name : {details['patient_name']}")
+        print(f"Age : {details['age']}")
+        print(f"Disease : {details['disease']}")  
+        
+        print("---------------------------------") 
+        
+view_patient()
 
+        
     
