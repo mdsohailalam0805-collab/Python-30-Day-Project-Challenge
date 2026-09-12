@@ -26,7 +26,7 @@ def view_patient():
     patient_id = input("Enter patient Id:")
     
     if patient_id not in patients:
-        print("Patient Not Found!")
+        print("Patient Not Available!")
         return
     
     for patient_id, details in patients.items():
@@ -42,5 +42,41 @@ def view_patient():
         
 view_patient()
 
+
+def search_patient():
+    patient_id = input("Enter patient Id:")
+    
+    if patient_id in patients:
+        details = patients[patient_id]
         
+        print("\n ------PATIENT DETAILS------")
+        
+        print(f"Patient Id : {patient_id} ")
+        print(f"Patient Name : {details['patient_name']}")
+        print(f"Age : {details['age']}")
+        print(f"Disease : {details['disease']}")
+        print("-----------------------------------")
+        
+    else:
+        print("\n Patient Not Found!")
+        
+search_patient() 
+ 
+        
+doctors = {}
+
+def add_doctor():
+    doctor_id = input("Enter Doctor Id:")
+    doctor_name = input("Enter Doctor Name:")
+    specialization = input("Enter Doctor Specialization:")
+    
+    doctors[doctor_id] = {
+        
+        "doctor_name" : doctor_name,
+        "specialization" : specialization
+        
+    }
+    print("\n Doctor Added Successfully!")
+    print("---------------------------------")
+    
     
