@@ -16,7 +16,7 @@ def add_student():
     print("\n Student Added Successfully!")
     print("---------------------------------")
     
-add_student()
+
 print(students)
 
 def view_student():
@@ -33,8 +33,6 @@ def view_student():
         print(f"Age : {details['age']}")
         print(f"Course : {details['course']}")
         print("-----------------------------------")
-        
-view_student()
 
 
 def search_student():
@@ -55,8 +53,6 @@ def search_student():
         print("\n Student Not Available!")
         print("----------------------------")
         
-                
-search_student()
 
 def update_studnet():
     student_id = input("Enter Student ID:")
@@ -79,4 +75,75 @@ def update_studnet():
         print("\n Student not found!")
         print("-------------------------------")
         
-update_studnet()
+
+def calculate_result():
+    student_id = input("Enter Student ID:")
+    
+    if student_id not in students:
+        print("\nEnter not found!")
+        return
+    
+    print("\n Enter marks for 5 subjects.")
+    
+    subject1 = float(input("subject 1:"))
+    subject2 = float(input("subject 2:"))
+    subject3 = float(input("subject 3:"))
+    subject4 = float(input("subject 4:"))
+    subject5 = float(input("subject 5:"))
+    
+    total = subject1 + subject2 + subject3 + subject4 + subject5
+    
+    percentage = total/5
+    
+    if percentage >=90:
+        grade = "A+"
+        
+    elif percentage >=80:
+        grade = "A"
+        
+    elif percentage >=70:
+        grade = "B"
+        
+    elif percentage >=60:
+        grade = "C"
+        
+    elif percentage >=50:
+        grade = "D"
+        
+    else:
+        grade = "F"
+    
+    print("\n===== STUDENT RESULT =====")  
+    print(f"Student ID: {student_id}")
+    print(f"Student Name: {students[student_id]['student_name']}")
+    print(f"Total Marks : {total}")
+    print(f"percentage : {percentage:.2f}%")
+    print(f"Grade : {grade}")
+    print("--------------------------------")
+    
+
+
+def delete_student():
+    student_id = input("Enter Student ID:")
+    
+    if student_id in students:
+        del students[student_id]
+        
+        print("\n Student Deleted Successfully!")
+        print("------------------------------------")
+        
+    else:
+        print("\nStudent not found!")
+        print("------------------------")
+        
+def main_menu():
+    
+    while True:
+        
+        print("1. Add Student")
+        print("2. View Student")
+        print("3. Search Student")
+        print("4. Update Student")
+        print("5. Calculate Student")
+        print("6. Delete Student")
+        print("7. Exit")
