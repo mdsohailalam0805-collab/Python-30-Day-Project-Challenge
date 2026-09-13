@@ -53,7 +53,7 @@ def search_patient():
         
     else:
         print("\n Patient Not Found!")
- 
+
         
 doctors = {}
 

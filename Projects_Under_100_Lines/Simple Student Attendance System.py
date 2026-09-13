@@ -32,7 +32,7 @@ for student, status in attendence.items():
         
     elif status.lower() == "absent":
         absent += 1
-           
+        
     else:
         No_Marked += 1  
 
