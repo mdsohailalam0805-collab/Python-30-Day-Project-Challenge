@@ -57,3 +57,26 @@ def search_student():
         
                 
 search_student()
+
+def update_studnet():
+    student_id = input("Enter Student ID:")
+    
+    if student_id in students:
+        details = students[student_id]
+        
+        new_name = input("Enter new student name:")
+        new_age = input("Enter new student Age:")
+        new_course = input("Enter new course name:")
+        
+        details["name"] = new_name
+        details["age"] = new_age
+        details["course"] = new_course
+        
+        print("\n Student update successfully!")
+        print("-----------------------------------")
+        
+    else:
+        print("\n Student not found!")
+        print("-------------------------------")
+        
+update_studnet()
