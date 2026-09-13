@@ -17,8 +17,6 @@ def add_student():
     print("---------------------------------")
     
 
-print(students)
-
 def view_student():
     
     if not students:
@@ -54,7 +52,7 @@ def search_student():
         print("----------------------------")
         
 
-def update_studnet():
+def update_student():
     student_id = input("Enter Student ID:")
     
     if student_id in students:
@@ -144,6 +142,36 @@ def main_menu():
         print("2. View Student")
         print("3. Search Student")
         print("4. Update Student")
-        print("5. Calculate Student")
+        print("5. Calculate Result")
         print("6. Delete Student")
         print("7. Exit")
+        
+        choice = input("Enter your Choice:")
+        
+        if choice =="1":
+            add_student()
+            
+        elif choice =="2":
+            view_student()
+            
+        elif choice == "3":
+            search_student()
+            
+        elif choice == "4":
+            update_student()
+            
+        elif choice == "5":
+            calculate_result()
+            
+        elif choice == "6":
+            delete_student()
+            
+        elif choice == "7":
+            print("Thank You For Using This Application.")
+            break
+        
+        else:
+            print("Invalid Choice, Try Again!")
+            break
+        
+main_menu()
