@@ -32,6 +32,7 @@ def view_student():
         print(f"Student Name : {details['student_name']}")
         print(f"Age : {details['age']}")
         print(f"Course : {details['course']}")
+        print("-----------------------------------")
         
 view_student()
 
