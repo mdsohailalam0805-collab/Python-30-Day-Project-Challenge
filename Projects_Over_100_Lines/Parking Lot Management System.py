@@ -27,3 +27,24 @@ def park_vehicle():
             print("-----------------------------------")
             
             break
+        
+        else:
+            print("\n Parking Lot is Full!")
+            
+            
+def view_parking_slots():
+    
+    print("===== PARKING DETAILS =====")
+    
+    for slot, details in parking_slots.items():
+    
+        if details is None:
+            print(f"{slot} : Empty")
+        
+        else:
+            print(f"{slot} : Occupied")
+            print(f" Vehicle Number : {details['vehicle_number']}")
+            print(f" Vehicle Type : {details['vehicle_type']}")
+        
+    print("---------------------------------------")
+        
