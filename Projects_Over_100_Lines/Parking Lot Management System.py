@@ -82,7 +82,7 @@ def remove_vehicle():
                 print("\n Vehicle Removed Successfully!")
                 print(f"Parking Slot : {slot}")
                 print(f"Vehicle Number : {vehicle_number}")
-                print(f"Vehicle Type : {vehicle_type}")
+                print(f"Vehicle Type : {details['vehicle_type']}")
                 print("-----------------------------------")
                 
                 return
@@ -90,7 +90,7 @@ def remove_vehicle():
     print("\n Vehicle Not Found!")        
     
     
-    def calculate_bill():
+def calculate_bill():
         vehicle_number = input("Enter Vehicle Number:")
         
         vehicle_found = False
@@ -102,7 +102,7 @@ def remove_vehicle():
                 if details["vehicle_number"] == vehicle_number:
                     vehicle_found = True
 
-                    parking_hours = float(input("Enter parking hourse:"))
+                    parking_hours = float(input("Enter parking hours:"))
                     rate_per_hour = 20
                     
                     total_bill = parking_hours * rate_per_hour
@@ -120,3 +120,42 @@ def remove_vehicle():
         if not vehicle_found:
             print("\n Vehicle Not Found!") 
                 
+                
+def main_menu():
+    
+    while True:
+        
+        print("\n===== PARKING LOT MANAGEMENT SYSTEM =====")
+        print("1. Park Vehicle")
+        print("2. View Parking Slots")
+        print("3. Search Vehicle")
+        print("4. Remove Vehicle")
+        print("5. Calculate Parking Bill")
+        print("6. Exit")
+        
+        choice = input("Enter Your Choice:")
+        
+        if choice == "1":
+            park_vehicle()
+
+        elif choice == "2":
+            view_parking_slots()
+
+        elif choice == "3":
+            search_vehicle()
+
+        elif choice == "4":
+            remove_vehicle()
+
+        elif choice == "5":
+            calculate_bill()
+
+        elif choice == "6":
+            print("\nThank You For Using Parking Lot Management System!")
+            break
+
+        else:
+            print("\nInvalid Choice! Please Try Again!")
+
+
+main_menu()
