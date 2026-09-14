@@ -88,5 +88,35 @@ def remove_vehicle():
                 return
             
     print("\n Vehicle Not Found!")        
+    
+    
+    def calculate_bill():
+        vehicle_number = input("Enter Vehicle Number:")
+        
+        vehicle_found = False
+        
+        for slot, details in parking_slots.items():
+            
+            if details is not None:
                 
+                if details["vehicle_number"] == vehicle_number:
+                    vehicle_found = True
+
+                    parking_hours = float(input("Enter parking hourse:"))
+                    rate_per_hour = 20
+                    
+                    total_bill = parking_hours * rate_per_hour
+                    
+                    print("\n===== PARKING BILL =====")
+                    print(f"Vehicle Number : {vehicle_number}")
+                    print(f"Parking Slot : {slot}")
+                    print(f"Parking Hours : {parking_hours}")
+                    print(f"Rate Per Hour : ₹{rate_per_hour}")
+                    print(f"Total Bill : ₹{total_bill}")
+                    print("---------------------------------")
+                    
+                    return
+                
+        if not vehicle_found:
+            print("\n Vehicle Not Found!") 
                 
