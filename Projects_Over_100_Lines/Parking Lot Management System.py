@@ -67,4 +67,26 @@ def search_vehicle():
                 return
     else:
         print("\n Vehicle Not Found!")
+        
+        
+def remove_vehicle():
+    vehicle_number = input("Enter Vehicle Number:")
+    
+    for slot, details in parking_slots.items():
+        
+        if details is not None:
+            
+            if details["vehicle_number"] == vehicle_number:
+                parking_slots[slot] = None
+                
+                print("\n Vehicle Removed Successfully!")
+                print(f"Parking Slot : {slot}")
+                print(f"Vehicle Number : {vehicle_number}")
+                print(f"Vehicle Type : {vehicle_type}")
+                print("-----------------------------------")
+                
+                return
+            
+    print("\n Vehicle Not Found!")        
+                
                 
