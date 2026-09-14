@@ -47,4 +47,24 @@ def view_parking_slots():
             print(f" Vehicle Type : {details['vehicle_type']}")
         
     print("---------------------------------------")
+    
+    
+def search_vehicle():
+    vehicle_number = input("Enter Vehicle Number:")
+    
+    for slot, details in parking_slots.items():
         
+        if details is not None:
+            
+            if details["vehicle_number"] == vehicle_number:
+                
+                print("\n -----VEHICLE FOUND-----")
+                print(f"Parking Slot : {slot}")
+                print(f"vehicle_number : {details['vehicle_number']}")
+                print(f"vehicle_type : {details['vehicle_type']}")
+                print("\n---------------------------------")
+                
+                return
+    else:
+        print("\n Vehicle Not Found!")
+                
