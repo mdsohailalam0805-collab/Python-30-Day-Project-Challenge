@@ -6,10 +6,10 @@ urls = {}
 def generate_short_code():
     characters = string.ascii_letters + string.digits
     
-    short_code = " "
+    short_code = ""
     
     for i in range(6):
-        short_code += random_choice(characters)
+        short_code += random.choice(characters)
         
     return short_code
 
@@ -45,7 +45,7 @@ def open_short_url():
         
 def view_all_urls():
     if not urls:
-        print("/n No Urls Available!")
+        print("\n No Urls Available!")
         return
     
     print("=====ALL SHORTENED URLs=====")
@@ -73,34 +73,33 @@ def main_menu():
     
     while True:
         
-        print("1.Generate Short Code")
-        print("2. Create Short URL")
-        print("3. Open Short Url")
-        print("4. View All Urls")
-        print("5. Delete Short Url")
-        print("6. Exit")
-        
-        choice = input("Enter Your Choice:")
-        
+        print("\n===== URL SHORTENER =====")
+        print("1. Create Short URL")
+        print("2. Open Short URL")
+        print("3. View All URLs")
+        print("4. Delete Short URL")
+        print("5. Exit")
+
+        choice = input("Enter Your Choice: ")
+
         if choice == "1":
-            generate_short_code()
-            
-        elif choice == "2":
             create_short_url()
-            
-        elif choice == "3":
+
+        elif choice == "2":
             open_short_url()
-            
-        elif choice == "4":
+
+        elif choice == "3":
             view_all_urls()
-            
-        elif choice == "5":
+
+        elif choice == "4":
             delete_short_url()
-            
-        elif choice == "6":
-            print("\n Thank You For Using This Application!")
+
+        elif choice == "5":
+            print("\nThank You For Using This Application!")
             break
-        
+
         else:
-            print("Invalid Choice , Try Again!")
+            print("\nInvalid Choice, Try Again!")
+
+
 main_menu()
