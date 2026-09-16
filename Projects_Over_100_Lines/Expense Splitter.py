@@ -39,3 +39,17 @@ def view_expenses():
             print(f"Amount : {amount}")
             print("---------------------------")
             
+            
+def calculate_split():
+    if not people:
+        print("\n No people Available!")
+        return
+    
+    total_expense = sum(expenses.values())
+    per_person_share = total_expense / len(people)
+    
+    print("\n =====EXPENSE SPLIT=====")
+    print(f"Total Expense : {total_expense}")
+    print(f"Total People : {len(people)}")
+    print(f"Per Person Share : {per_person_share}")
+    print("----------------------------------------")
