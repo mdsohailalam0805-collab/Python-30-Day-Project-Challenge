@@ -28,4 +28,14 @@ def add_expenses():
     print("-------------------------------")
     
 def view_expenses():
-          
+        if not expenses:
+            print("\n No Expenses Available!")
+            return
+        
+        print("\n=====ALL EXPENSES=====")
+        
+        for name, amount in expenses.items():
+            print(f"Person : {name}")
+            print(f"Amount : {amount}")
+            print("---------------------------")
+            
