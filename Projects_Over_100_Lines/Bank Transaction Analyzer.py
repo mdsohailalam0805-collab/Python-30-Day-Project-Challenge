@@ -25,14 +25,16 @@ def add_transaction():
 def view_transaction():
     
     if not transaction:
-        print("\n Transaction Not Found!")
+        print("\n No Transaction Available!")
         return
     
+        print("\n All Transaction.")
+        
     for trnasaction in transactions:
         
-        print(f"Transaction Type : {transaction_type}")
-        print("f Category : {category}")
-        print("f Amount : {amount}") 
+        print(f"Transaction Type : {transaction['transaction_type']}")
+        print("f Category : {transaction['category']}")
+        print("f Amount : {transaction['amount']:.2f}") 
         print("---------------------------")
         
         
