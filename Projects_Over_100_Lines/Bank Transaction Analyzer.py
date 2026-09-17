@@ -59,4 +59,23 @@ def calculate_balance():
         print(f"Current Balance : {balance:.2f}")
         print("---------------------------------------")
     
+ 
+def highest_expense():
+    highest = None
     
+    for transaction in transactions:
+        
+        if transaction["type"].lower() == "expense":
+            
+            if highest is None or transaction["type"] > highest["amount"]:
+                highest = transaction
+                
+    if highest is None:
+        print("\n No expense Transaction Available!")
+        return
+    
+    print("\n =====HIGHEST EXPENSE=====")
+    
+    print(f"Category : {highest['category']}")
+    print(f"Amount : {highest['amount']}")
+    print("-----------------------------")   
