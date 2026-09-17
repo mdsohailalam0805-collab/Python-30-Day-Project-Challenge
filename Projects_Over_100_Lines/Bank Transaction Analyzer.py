@@ -22,19 +22,19 @@ def add_transaction():
     print("-----------------------------")
     
     
-def view_transaction():
+def view_transactions():
     
-    if not transaction:
-        print("\n No Transaction Available!")
+    if not transactions:
+        print("\nNo Transaction Available!")
         return
     
-        print("\n All Transaction.")
+    print("\n===== ALL TRANSACTIONS =====")
         
-    for trnasaction in transactions:
+    for transaction in transactions:
         
-        print(f"Transaction Type : {transaction['transaction_type']}")
-        print("f Category : {transaction['category']}")
-        print("f Amount : {transaction['amount']:.2f}") 
+        print(f"Transaction Type : {transaction['type']}")
+        print(f"Category : {transaction['category']}")
+        print(f"Amount : ₹{transaction['amount']:.2f}")
         print("---------------------------")
         
         
@@ -59,7 +59,7 @@ def calculate_balance():
         print(f"Current Balance : {balance:.2f}")
         print("---------------------------------------")
     
- 
+
 def highest_expense():
     highest = None
     
@@ -109,3 +109,41 @@ def transaction_summary():
     print("-------------------------------")
     
     
+def main_menu():
+
+    while True:
+
+        print("\n===== BANK TRANSACTION ANALYZER =====")
+        print("1. Add Transaction")
+        print("2. View Transactions")
+        print("3. Calculate Balance")
+        print("4. Find Highest Expense")
+        print("5. Transaction Summary")
+        print("6. Exit")
+
+        choice = input("Enter Your Choice: ")
+
+        if choice == "1":
+            add_transaction()
+
+        elif choice == "2":
+            view_transactions()
+
+        elif choice == "3":
+            calculate_balance()
+
+        elif choice == "4":
+            highest_expense()
+
+        elif choice == "5":
+            transaction_summary()
+
+        elif choice == "6":
+            print("\nThank You For Using Bank Transaction Analyzer!")
+            break
+
+        else:
+            print("\nInvalid Choice! Please Try Again!")
+
+
+main_menu()
