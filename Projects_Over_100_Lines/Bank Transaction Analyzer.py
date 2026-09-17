@@ -78,4 +78,34 @@ def highest_expense():
     
     print(f"Category : {highest['category']}")
     print(f"Amount : {highest['amount']}")
-    print("-----------------------------")   
+    print("-----------------------------") 
+    
+    
+def transaction_summary():
+    
+    total_income = 0
+    total_expense = 0
+    income_count = 0
+    expense_count = 0
+    
+    for transaction in transactions:
+        
+        if transaction["type"].lower() == "income":
+            total_income += transaction["amount"]
+            income_count += 1
+            
+        elif transaction["type"].lower() == "expense":
+            total_expense += transaction["amount"]
+            expense_count += 1
+        
+    balance = total_income - total_expense
+            
+    print("\n =====TRANSACTION SUMMARY=====")
+    print(f"Total Income : {total_income:.2f}")
+    print(f"Income Transaction : {income_count:.2f}")
+    print(f"Total Expense : {total_expense:.2f}")
+    print(f"Expense Transaction : {expense_count:.2f}")
+    print(f"Current Balance : {balance:.2f}")
+    print("-------------------------------")
+    
+    
