@@ -22,4 +22,19 @@ def add_transaction():
     print("-----------------------------")
     
     
+def view_transaction():
+    
+    if not transaction:
+        print("\n Transaction Not Found!")
+        return
+    
+    for trnasaction in transactions:
+        
+        print(f"Transaction Type : {transaction_type}")
+        print("f Category : {category}")
+        print("f Amount : {amount}") 
+        print("---------------------------")
+        
+        
+    
     
