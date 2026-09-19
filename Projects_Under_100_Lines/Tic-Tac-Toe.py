@@ -15,14 +15,23 @@ board =[" ", " ", " ",
 player = "X"
 winner = False
 
-for turn in range (9):
+while True:
     
     position = int(input(f"Player {player}, Enter position (1-9):"))
     
-    board [position-1] = player
+    if position < 1 or position > 9:
+        print("Invalid Position! Enter Between 1 and 9.")
+        continue
     
+    if board[position-1] == " ":
+        board [position-1] = player
+    
+    else:
+        print("Position Allready Occupied!")
+        continue
     
     # Updated board dikhana
+    
     print(board[0], "|", board[1], "|", board[2])
     print("----------")
 
@@ -44,16 +53,20 @@ for turn in range (9):
         board[2] == board[4] == board[6] != " "):
         
         winner = True
-        print(f"\n Player {player} Wins!")
+        print(f"\n Player {player} Winner!")
         break
     
-    # player switch
     
+    # Draw condition
+
+    if " " not in board:
+        print("\n Game Draw!")
+        break
+
+    # player switch
     if player == "X":
         player = "O"
         
     else:
         player = "X"
 
-if not winner:
-    print("\n Game Draw!")
