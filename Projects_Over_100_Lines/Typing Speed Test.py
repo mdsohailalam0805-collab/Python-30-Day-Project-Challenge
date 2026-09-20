@@ -40,6 +40,7 @@ elif choice == "3":
     
 else:
     print("Invalid Choice!")
+    exit()
     
 
 sentence = random.choice(sentences[difficulty])
@@ -53,9 +54,17 @@ start_time = time.time()
 user_text = input(">")
 end_time = time.time()
 
-time_taken = start_time - end_time 
+time_taken = end_time - start_time  
+
 print(f" Time Taken : {time_taken:.2f} seconds")
 
 typed_words = user_text.split()
 words_count = len(typed_words)
+
 print(f"Words Typed : {words_count}")
+
+time_in_minutes = time_taken / 60
+
+wpm = words_count / time_in_minutes
+
+print(f"WPM : {wpm:.2f}")
