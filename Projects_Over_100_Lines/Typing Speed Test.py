@@ -21,35 +21,42 @@ sentences = {
         "A good programmer improves by practicing and learning from mistakes."
     ]
 }
+
+best_wpm = 0
+
 while True:
 
     print("\n =====TYPING SPEED TEST=====")
     print("1. Easy")
     print("2. Medium")
     print("3. Hard")
+    
+    while True:
 
-    choice = input("Enter your choice:")
+        choice = input("Enter your choice:")
 
-    if choice == "1":
-        difficulty = "Easy"
-        
-    elif choice == "2":
-        difficulty = "Medium"
-        
-    elif choice == "3":
-        difficulty = "Hard"
-        
-    else:
-        print("Invalid Choice!")
-        exit()
-        
+        if choice == "1":
+            difficulty = "Easy"
+            break
+
+        elif choice == "2":
+            difficulty = "Medium"
+            break
+
+        elif choice == "3":
+            difficulty = "Hard"
+            break
+
+        else:
+            print("Invalid Choice! Please try again.")
+            
 
     sentence = random.choice(sentences[difficulty])
 
     print("\n Type the following sentence:")
     print(sentence)   
 
-    print("\n Press Enter when you are ready.")
+    input("\n Press Enter when you are ready.")
 
     start_time = time.time()
     user_text = input(">")
@@ -69,6 +76,12 @@ while True:
     wpm = words_count / time_in_minutes
 
     print(f"WPM : {wpm:.2f}")
+    
+    if wpm > best_wpm:
+        best_wpm = wpm
+        
+    print(f"Best WPM : {best_wpm:.2f}")
+        
 
     original_words = sentence.split()
     correct_words = 0
@@ -96,14 +109,19 @@ while True:
     if accuracy >= 90:
         print("Performence : Excellent")
         
-    elif accuracy > 70:
+    elif accuracy >= 70:
         print("Performence : Good")
         
     else:
         print("Performence : keep practicing")
         
-    play_again = input("\n Do you want to play again!")
+    play_again = input("\n Do you want to play again :")
 
     if play_again.lower() != "yes":
+    
+        print("\n===== FINAL RESULT =====")
+        
+        print(f"Best WPM: {best_wpm:.2f}")
         print("Thanks for playing.")
+        
         break
