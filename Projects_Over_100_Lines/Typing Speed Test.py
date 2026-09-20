@@ -68,3 +68,15 @@ time_in_minutes = time_taken / 60
 wpm = words_count / time_in_minutes
 
 print(f"WPM : {wpm:.2f}")
+
+original_words = sentence.split()
+correct_words = 0
+
+for i in range (min(len(typed_words) , len(original_words))):
+    
+    if typed_words[i] == original_words[i]:
+        correct_words += 1
+        
+accuracy = (correct_words / len(original_words)) * 100
+print(f"Accuracy : {accuracy:.2f}")
+
