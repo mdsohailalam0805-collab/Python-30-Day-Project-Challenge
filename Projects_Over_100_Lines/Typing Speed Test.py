@@ -52,3 +52,10 @@ print("\n Press Enter when you are ready.")
 start_time = time.time()
 user_text = input(">")
 end_time = time.time()
+
+time_taken = start_time - end_time 
+print(f" Time Taken : {time_taken:.2f} seconds")
+
+typed_words = user_text.split()
+words_count = len(typed_words)
+print(f"Words Typed : {words_count}")
