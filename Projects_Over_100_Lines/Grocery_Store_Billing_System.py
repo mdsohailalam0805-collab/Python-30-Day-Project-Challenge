@@ -22,3 +22,20 @@ while True:
     for product_id,product in products.items():
         print(f"product_id : {product['name']} -"
               f"{product['price']}")
+        
+    print("9. Generate Bill")
+    print("10. Exit")
+    
+    choice = input("\nEnter your Choice:")
+    
+    if choice == "10":
+        print("\n Thank you for visiting.")
+        break
+    
+    elif choice == "9":
+        
+        if len(cart) == 0:
+            print("\n cart is empty.")
+            continue
+        
+        
