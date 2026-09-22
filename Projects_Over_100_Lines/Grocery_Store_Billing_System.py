@@ -38,4 +38,13 @@ while True:
             print("\n cart is empty.")
             continue
         
+    # Product selection check
+    
+    elif choice.isdigit() and 1 <= int(choice) <= 8:
+        product_id = int(choice)
+        
+        selected_product = products[product_id]
+        print(f"\n Selected Product : {selected_product['name']}")
+        print(f"Price : {selected_product['price']}")
+        
         
