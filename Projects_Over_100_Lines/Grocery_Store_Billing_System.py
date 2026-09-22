@@ -20,8 +20,8 @@ while True:
     print("\n=====PRODUCT MENU=====")
     
     for product_id,product in products.items():
-        print(f"product_id : {product['name']} -"
-              f"{product['price']}")
+        print(f"{product_id}. {product['name']} - ₹"
+    f"{product['price']}")
         
     print("9. Generate Bill")
     print("10. Exit")
@@ -47,4 +47,10 @@ while True:
         print(f"\n Selected Product : {selected_product['name']}")
         print(f"Price : {selected_product['price']}")
         
+        quantity = input("Enter Quantity:")
         
+        if not quantity.isdigit() or int(quantity) <=0:
+            print("Invalid Quantity")
+            continue
+        
+        quantity = int(quantity)
