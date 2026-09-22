@@ -81,3 +81,20 @@ while True:
         print(f"{item['name']} x {item['quantity']} = ₹{item_total}")
         
         subtotal += item_total
+    print("-" * 30)
+    print(f"Subtotal : {subtotal}")
+    
+    
+    # : Discount condition
+    
+    if subtotal >= 1000:
+        discount = subtotal * 0.10
+        print("Discount : 10%")
+        
+    elif subtotal >= 500:
+        discount = subtotal * 0.05
+        print("Discount : 5%")
+
+    else:
+        discount = 0
+        print("Discount : 0%")
