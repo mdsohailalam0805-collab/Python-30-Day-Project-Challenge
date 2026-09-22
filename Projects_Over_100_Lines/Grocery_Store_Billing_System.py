@@ -8,3 +8,17 @@ products = {
     7: {"name" : "Oil", "price" : 120},
     8: {"name" : "Biscuits", "price" : 50}
 }
+
+print("\n =====GROCERY STORE BILLING SYSTEM=====")
+
+customer_name = input("Enter Customer Name:")
+
+cart = []
+
+while True:
+    
+    print("\n=====PRODUCT MENU=====")
+    
+    for product_id,product in products.items():
+        print(f"product_id : {product['name']} -"
+              f"{product['price']}")
