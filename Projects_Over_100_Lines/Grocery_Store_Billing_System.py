@@ -54,3 +54,30 @@ while True:
             continue
         
         quantity = int(quantity)
+        
+    item = {
+        "name" : selected_product["name"],
+        "price" : selected_product["price"],
+        "quantity": quantity
+}
+
+    cart.append(item)
+    
+    total = selected_product["price"] * quantity
+    
+    print(f"{selected_product['name']} Added to cart.")
+    print(f"Item Total : {total}")
+    
+    print("\n=====BILL=====")
+    print(f"Customer Name : {customer_name}")
+    print("-" * 30)
+    
+    
+    subtotal = 0
+    
+    for item in cart:
+        
+        item_total = item['price'] * item['quantity']
+        print(f"{item['name']} x {item['quantity']} = ₹{item_total}")
+        
+        subtotal += item_total
